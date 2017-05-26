@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataTest_MS"
+             x:Class="DataTest_MS.MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+            <Label Grid.Row="0" x:Name="L1" TextColor="Black" HorizontalTextAlignment="Center" />
+            <Label Grid.Row="1" x:Name="L2" TextColor="Black" HorizontalTextAlignment="Center" />
+        
+            <ListView Grid.Row="2" x:Name="MyListView" HasUnevenRows="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                            <Label Text="{Binding title}" TextColor="Black" HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding releaseYear}" TextColor="Black" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </Grid>
+</ContentPage>
